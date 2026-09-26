@@ -1,0 +1,82 @@
+{
+  "tasks": [
+    {
+      "title": "Complete React Project",
+      "category": "Development",
+      "priority": "High",
+      "dueDate": "20/10/2026",
+      "id": "1"
+    },
+    {
+      "title": "Learn JavaScript ES6",
+      "category": "Learning",
+      "priority": "Medium",
+      "dueDate": "25/09/2026",
+      "id": "3",
+      "completed": true
+    },
+    {
+      "id": "4",
+      "title": "Design Dashboard UI",
+      "category": "Design",
+      "priority": "Medium",
+      "dueDate": "27/09/2026",
+      "completed": false
+    },
+    {
+      "id": "5",
+      "title": "Practice React Hooks",
+      "category": "Learning",
+      "priority": "High",
+      "dueDate": "28/09/2026",
+      "completed": true
+    },
+    {
+      "id": "6",
+      "title": "Update Resume",
+      "category": "Career",
+      "priority": "Low",
+      "dueDate": "30/09/2026",
+      "completed": false
+    },
+    {
+      "title": "Learn MySQL",
+      "category": "Design",
+      "priority": "Low",
+      "dueDate": "25/09/2026",
+      "id": "7"
+    },
+    {
+      "title": "Learn Advanced Tailwind CSS",
+      "category": "Design",
+      "priority": "Medium",
+      "dueDate": "05/10/2026",
+      "id": "8",
+      "completed": true
+    },
+    {
+      "id": "9",
+      "title": "Create Landing Page",
+      "category": "Design",
+      "priority": "Medium",
+      "dueDate": "07/10/2026",
+      "completed": true
+    },
+    {
+      "id": "10",
+      "title": "Prepare Interview Notes",
+      "category": "Career",
+      "priority": "High",
+      "dueDate": "10/10/2026",
+      "completed": false
+    },
+    {
+      "title": "learn MongoDB",
+      "category": "Learning",
+      "priority": "High",
+      "dueDate": "20/10/2026",
+      "id": "EsD0kbjsCH0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
