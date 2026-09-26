@@ -1,6 +1,7 @@
 import { useEffect , useState} from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import { API } from "./api"
 
 export const Summarycards = () => {
 
@@ -11,7 +12,7 @@ export const Summarycards = () => {
     useEffect(()=>{
         async function fetchTasks() {
             const response =await axios.get(
-                "http://localhost:3000/tasks"
+                `${API}`
             )
             setTasks(response.data)
         }

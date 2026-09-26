@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate ,useLocation} from "react-router-dom"
+import { API } from "./api"
 
 export const TaskLists = () => {
 
@@ -19,7 +20,7 @@ export const TaskLists = () => {
             : tasks
 
     const completeTask = async (id) => {
-        await axios.patch(`http://localhost:3000/tasks/${id}`, {
+        await axios.patch(`${API}${id}`, {
             completed: true
         })
 
@@ -33,7 +34,7 @@ export const TaskLists = () => {
     useEffect(() => {
         async function fetchApi() {
             const response = await axios.get(
-                "http://localhost:3000/tasks"
+                `${API}`
             )
 
             setTasks(response.data)
@@ -44,7 +45,7 @@ export const TaskLists = () => {
 
     async function handleDelete(id) {
         await axios.delete(
-            `http://localhost:3000/tasks/${id}`
+           `${API}${id}`
         )
 
         setTasks(tasks.filter(task => task.id !== id))

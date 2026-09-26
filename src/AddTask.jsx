@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import { useNavigate, useParams } from "react-router-dom"
+import { API } from "./api"
 
 export const AddTask = () => {
 
@@ -18,7 +19,7 @@ export const AddTask = () => {
             if (!id) return
 
             const response = await axios.get(
-                `http://localhost:3000/tasks/${id}`
+                `${API}/${id}`
             )
 
             setTask(response.data.title)
@@ -43,11 +44,11 @@ export const AddTask = () => {
 
         console.log(form)
         if(id){
-            const response = await axios.put(`http://localhost:3000/tasks/${id}`,form)
+            const response = await axios.put(`https://6ab751a69b03155d08087cd5.mockapi.io/tasks/${id}`,form)
             console.log(response)
         }
         else{
-            const response = await axios.post("http://localhost:3000/tasks",form)
+            const response = await axios.post("https://6ab751a69b03155d08087cd5.mockapi.io/tasks",form)
             console.log(response)
         }
         navigate("/")
