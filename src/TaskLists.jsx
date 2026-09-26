@@ -21,7 +21,7 @@ export const TaskLists = () => {
 
 
     const completeTask = async (id) => {
-        await axios.patch(`${API}${id}`, {
+        await axios.put(`${API}/${id}`, {
             completed: true
         })
 
