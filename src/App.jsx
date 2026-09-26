@@ -24,7 +24,7 @@ function App() {
                   </h2>
                 </main>
                 <Summarycards />
-                
+
 
               </div>
 
@@ -33,34 +33,40 @@ function App() {
         />
         <Route path="/add-task/:id" element={<AddTask />} />
         <Route path="/add-task" element={<AddTask />} />
-        <Route path="/tasks" element={
-          <div className="flex min-h-screen">
-            <Sidebar />
-
-            <div className="flex-1">
-              <TaskLists />
-            </div>
-          </div>
-        }
-        />
-        <Route path="/completed" element={
+        <Route
+          path="/tasks"
+          element={
             <div className="flex min-h-screen">
               <Sidebar />
 
               <div className="flex-1">
+                <Navbar />
                 <TaskLists />
               </div>
             </div>
           }
         />
+        <Route path="/completed" element={
+          <div className="flex min-h-screen">
+            <Sidebar />
+
+
+            <div className="flex-1">
+              <Navbar/>
+              <TaskLists />
+            </div>
+          </div>
+        }
+        />
         <Route path="/pending" element={
           <div className="flex min-h-screen">
-              <Sidebar />
+            <Sidebar />
 
-              <div className="flex-1">
-                <TaskLists />
-              </div>
+
+            <div className="flex-1">
+              <TaskLists />
             </div>
+          </div>
         } />
       </Routes>
 

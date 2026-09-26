@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
-import { useNavigate ,useLocation} from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 import { API } from "./api"
 
 export const TaskLists = () => {
@@ -13,11 +13,12 @@ export const TaskLists = () => {
 
 
     const displayedTasks =
-    location.pathname === "/completed"
-        ? tasks.filter(task => task.completed === true)
-        : location.pathname === "/pending"
-            ? tasks.filter(task => task.completed === false)
-            : tasks
+        location.pathname === "/completed"
+            ? tasks.filter(task => task.completed === true)
+            : location.pathname === "/pending"
+                ? tasks.filter(task => task.completed === false)
+                : tasks
+
 
     const completeTask = async (id) => {
         await axios.patch(`${API}${id}`, {
@@ -31,6 +32,7 @@ export const TaskLists = () => {
         ))
     }
 
+
     useEffect(() => {
         async function fetchApi() {
             const response = await axios.get(
@@ -43,13 +45,15 @@ export const TaskLists = () => {
         fetchApi()
     }, [])
 
+
     async function handleDelete(id) {
         await axios.delete(
-           `${API}${id}`
+            `${API}${id}`
         )
 
         setTasks(tasks.filter(task => task.id !== id))
     }
+
 
     return (
         <div className="bg-slate-100 px-6 py-8">
@@ -71,8 +75,9 @@ export const TaskLists = () => {
                             </p>
                         </div>
 
+
                         <div className="text-sm text-slate-500">
-                            {tasks.length} tasks
+                            {displayedTasks.length} tasks
                         </div>
 
                     </div>
@@ -99,6 +104,7 @@ export const TaskLists = () => {
                                         {task.title}
                                     </h3>
 
+
                                     {task.completed ? (
                                         <span className="shrink-0 bg-green-100 text-green-700 text-xs font-medium px-2.5 py-1 rounded-full">
                                             Completed
@@ -110,6 +116,7 @@ export const TaskLists = () => {
                                     )}
 
                                 </div>
+
 
                                 <p className="text-sm text-slate-500 mt-2">
                                     {task.category}
@@ -126,6 +133,7 @@ export const TaskLists = () => {
                                     <span className="text-sm text-slate-500">
                                         Priority
                                     </span>
+
 
                                     <span
                                         className={`text-xs font-medium px-2.5 py-1 rounded-full
@@ -147,6 +155,7 @@ export const TaskLists = () => {
                                     <span className="text-sm text-slate-500">
                                         Due Date
                                     </span>
+
 
                                     <span className="text-sm font-medium text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md">
                                         {task.dueDate}
